@@ -1,8 +1,10 @@
-/* eslint-disable func-style */
-function flatten(array) {
+const eqArrays = require('./eqArrays');
+const assertArraysEqual = require('./assertArraysEqual');
+
+const flatten = function(array) {
   const flattened = [];
   
-  function flattenArray(array) {
+  const flattenArray = function(array) {
     for (let i = 0; i < array.length; i++) {
       const item = array[i];
   
@@ -12,37 +14,13 @@ function flatten(array) {
         flattened.push(item);
       }
     }
-  }
+  };
   
   flattenArray(array);
   return flattened;
-}
+};
 
 const array = [1, [2, [3, 4], 5], 6, [7]];
 
 const flattenedArray = flatten(array);
 console.log(flattenedArray);
-
-
-function assertArraysEqual(array1, array2) {
-  if (eqArrays(array1, array2)) {
-    console.log("✅✅✅ Arrays are equal:", array1, "==", array2);
-  } else {
-    console.log("🛑🛑🛑 Arrays are not equal:", array1, "!=", array2);
-  }
-}
-    
-// Copied eqArray function
-function eqArrays(array1, array2) {
-  if (array1.length !== array2.length) {
-    return false;
-  }
-      
-  for (let i = 0; i < array1.length; i++) {
-    if (array1[i] !== array2[i]) {
-      return false;
-    }
-  }
-      
-  return true;
-}
