@@ -19,10 +19,4 @@ const letterPositions = function(sentence) {
   return results;
 };
 
-// const asking = "hello";
-// const result1 = letterPositions(asking);
-// //console.log(result1);
-
-
-const result1 = letterPositions("hello").e;
-assertArraysEqual(result1, [1]);
+module.exports = letterPositions;

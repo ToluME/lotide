@@ -15,6 +15,4 @@ const countLetters = function(sentence) {
 };
   
 
-const sentence = "Michael is my husband";
-const result = countLetters(sentence);
-console.log(result);
+module.exports = countLetters;
