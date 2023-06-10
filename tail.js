@@ -1,5 +1,3 @@
-const assertEqual = require('./assertEqual');
-
 const tail = function(a) {
   if (a.length <= 0) {
     return [];
